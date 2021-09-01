@@ -153,6 +153,7 @@ Refer to the [chart documentation for more information on each of these architec
 | `podLabels`                             | MongoDB&reg; pod labels                                                                                | `{}`            |
 | `podAnnotations`                        | MongoDB&reg; Pod annotations                                                                           | `{}`            |
 | `priorityClassName`                     | Name of the existing priority class to be used by MongoDB&reg; pod(s)                                  | `""`            |
+| `runtimeClassName`                     | Name of the runtime class to be used by MongoDB&reg; pod(s)                                  | `""`            |
 | `podSecurityContext.enabled`            | Enable MongoDB&reg; pod(s)' Security Context                                                           | `true`          |
 | `podSecurityContext.fsGroup`            | Group ID for the volumes of the MongoDB&reg; pod(s)                                                    | `1001`          |
 | `podSecurityContext.sysctls`            | sysctl settings of the MongoDB&reg; pod(s)'                                                            | `[]`            |
@@ -305,6 +306,7 @@ Refer to the [chart documentation for more information on each of these architec
 | `arbiter.podLabels`                          | Arbiter pod labels                                                                                | `{}`    |
 | `arbiter.podAnnotations`                     | Arbiter Pod annotations                                                                           | `{}`    |
 | `arbiter.priorityClassName`                  | Name of the existing priority class to be used by Arbiter pod(s)                                  | `""`    |
+| `arbiter.runtimeClassName`                  | Name of the runtime class to be used by Arbiter pod(s)                                  | `""`    |
 | `arbiter.podSecurityContext.enabled`         | Enable Arbiter pod(s)' Security Context                                                           | `true`  |
 | `arbiter.podSecurityContext.fsGroup`         | Group ID for the volumes of the Arbiter pod(s)                                                    | `1001`  |
 | `arbiter.podSecurityContext.sysctls`         | sysctl settings of the Arbiter pod(s)'                                                            | `[]`    |
@@ -365,6 +367,7 @@ Refer to the [chart documentation for more information on each of these architec
 | `hidden.podLabels`                                   | Hidden node pod labels                                                                               | `{}`               |
 | `hidden.podAnnotations`                              | Hidden node Pod annotations                                                                          | `{}`               |
 | `hidden.priorityClassName`                           | Name of the existing priority class to be used by hidden node pod(s)                                 | `""`               |
+| `hidden.runtimeClassName`                           | Name of the runtime class to be used by hidden node pod(s)                                 | `""`               |
 | `hidden.resources.limits`                            | The resources limits for hidden node containers                                                      | `{}`               |
 | `hidden.resources.requests`                          | The requested resources for hidden node containers                                                   | `{}`               |
 | `hidden.livenessProbe.enabled`                       | Enable livenessProbe                                                                                 | `true`             |
@@ -433,8 +436,8 @@ Refer to the [chart documentation for more information on each of these architec
 | `metrics.serviceMonitor.namespace`           | Namespace which Prometheus is running in                                                                              | `""`                       |
 | `metrics.serviceMonitor.interval`            | Interval at which metrics should be scraped                                                                           | `30s`                      |
 | `metrics.serviceMonitor.scrapeTimeout`       | Specify the timeout after which the scrape is ended                                                                   | `""`                       |
-| `metrics.serviceMonitor.relabelings`         | RelabelConfigs to apply to samples before scraping                                                                    | `[]`                       |
-| `metrics.serviceMonitor.metricRelabelings`   | MetricRelabelConfigs to apply to samples before ingestion                                                             | `[]`                       |
+| `metrics.serviceMonitor.relabellings`        | RelabelConfigs to apply to samples before scraping.                                                                   | `[]`                       |
+| `metrics.serviceMonitor.metricRelabelings`   | MetricsRelabelConfigs to apply to samples before ingestion.                                                           | `[]`                       |
 | `metrics.serviceMonitor.additionalLabels`    | Used to pass Labels that are used by the Prometheus installed in your cluster to select Service Monitors to work with | `{}`                       |
 | `metrics.prometheusRule.enabled`             | Set this to true to create prometheusRules for Prometheus operator                                                    | `false`                    |
 | `metrics.prometheusRule.additionalLabels`    | Additional labels that can be used so prometheusRules will be discovered by Prometheus                                | `{}`                       |
